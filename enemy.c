@@ -24,7 +24,7 @@ Enemy spawn_enemy(int player_pos_x,int player_pos_y)
     // we can chose a pseudo random value for pos_y and radius
     // with this equation we can calculate coresponding value for pos_x
 
-    srand((unsigned)time(NULL));
+    // srand((unsigned)time(NULL));
 
     double p_pos_x = (double)player_pos_x;      // type conversions
     double p_pos_y = (double)player_pos_y;
@@ -42,7 +42,7 @@ Enemy spawn_enemy(int player_pos_x,int player_pos_y)
     // faill safe
     if(inside_equation < 0.0)
     {
-        inside_equation = 0.0;
+        inside_equation *= -1.0;
     }
     
     int e_pos_x = sign * (int)(sqrt(inside_equation) + p_pos_x);
